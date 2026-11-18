@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing League</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e8f1ee;
+            color: #207095;
+        }
+
+        header {
+            background-color: #e8f1ee;
+            color: #207095;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Flexbox Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            background-color: #d5e6e2;
+        }
+
+        nav a,
+        .dropdown-button {
+            color: #207095;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+
+        nav a:hover,
+        .dropdown-button:hover {
+            background-color: #c1dcd5;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 180px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e8f1ee;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 25px;
+            background-color: #4b3e3e;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            overflow-wrap: anywhere;
+        }
+
+        h2 {
+            color: #207095;
+        }
+
+        iframe,
+        video {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            border: none;
+            margin-top: 10px;
+        }
+
+        video {
+            height: auto;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a9c9d5;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #2c7aa7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #207095;
+        }
+
+        footer {
+            background-color: #2c7aa7;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav > a,
+            .dropdown-button {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+            }
+
+            .banner {
+                padding: 18px;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Racing League</h1>
+        <p>Speed, Skill and Passion</p>
+    </header>
+
+    <!-- Responsive Flexbox Navigation with Dropdown -->
+    <nav>
+        <div class="dropdown">
+            <button class="dropdown-button" type="button">
+                Media Elements ▼
+            </button>
+
+            <div class="dropdown-content">
+                <a href="#audio">Audio</a>
+                <a href="#pdf">Racing 101 PDF</a>
+                <a href="#youtube">YouTube Video</a>
+                <a href="#local-video">Local Videos</a>
+                <a href="#map">Track Location</a>
+            </div>
+        </div>
+
+        <a href="#application">Application Form</a>
+    </nav>
+
+    <section class="banner">
+        <h2>Welcome to Racing League</h2>
+        <p>Explore racing, learn new skills and join our team.</p>
+    </section>
+
+    <main class="container">
+
+        <!-- Audio Section -->
+        <section class="box" id="audio">
+            <h2>Racing Audio</h2>
+            <p>Listen to the racing theme.</p>
+
+            <audio controls autoplay>
+                <source src="f1.mpeg" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- PDF Section -->
+        <section class="box" id="pdf">
+            <h2>Racing 101 PDF</h2>
+            <p>Read the racing guide below.</p>
+
+            <iframe
+                src="Racing-101-.pdf"
+                title="Racing 101 PDF"
+                height="450">
+            </iframe>
+
+            <p>
+                <a href="Racing-101-.pdf" target="_blank">
+                    Open PDF in a new tab
+                </a>
+            </p>
+        </section>
+
+        <!-- YouTube Video Section -->
+        <section class="box" id="youtube">
+            <h2>Racing YouTube Video</h2>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UO084ULiGew?si=07lzgUBdbiJSCM-C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- Local Video Section -->
+        <section class="box" id="local-video">
+            <h2>Local Racing Videos</h2>
+
+            <h3>Porsche Racing Film</h3>
+            <video controls>
+                <source
+                    src="The Racer Short Film - Porsche - DEFY Productions (1080p, h264).mp4"
+                    type="video/mp4">
+                Your browser does not support this video.
+            </video>
+
+            <h3>Second Video</h3>
+            <video controls>
+                <source
+                    src="Rick Rolled (Short Version).mp4"
+                    type="video/mp4">
+                Your browser does not support this video.
+            </video>
+        </section>
+
+        <!-- Google Maps Section -->
+        <section class="box" id="map">
+            <h2>Track Location</h2>
+            <p>Find the location on the map.</p>
+
+            <iframe
+                src="https://maps.google.com/maps?q=Karunya%20Institute%20of%20Technology%20and%20Sciences&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                title="Track location map"
+                height="350"
+                loading="lazy">
+            </iframe>
+        </section>
+
+        <!-- Application Form -->
+        <section class="box" id="application">
+            <h2>Racing League Application Form</h2>
+            <p>Fill in the details to apply for a role.</p>
+
+            <form action="#" method="post">
+
+                <label for="name">Full Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required>
+
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="phone">Phone Number:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number">
+
+                <label for="role">Select Your Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">-- Select a Role --</option>
+                    <option value="analyst">Race Strategy Analyst</option>
+                    <option value="pit-crew">Pit Crew Coordinator</option>
+                    <option value="operations">Track Operations</option>
+                </select>
+
+                <label for="experience">Experience:</label>
+                <textarea
+                    id="experience"
+                    name="experience"
+                    rows="4"
+                    placeholder="Describe your experience"></textarea>
+
+                <label for="application">
+                    <input type="checkbox" name="agreement" required>
+                    I agree to the application terms.
+                </label>
+
+                <input type="submit" value="Submit Application">
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Racing League. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
